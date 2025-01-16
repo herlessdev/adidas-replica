@@ -22,9 +22,7 @@ El objetivo de este proyecto es replicar un sitio de comercio electrónico moder
 
 Este proyecto es únicamente para **fines demostrativos y educativos**. **No representa el sitio web oficial de Adidas** ni busca infringir derechos de autor o marcas registradas. Todos los nombres, logotipos y marcas mencionadas pertenecen a sus respectivos propietarios.
 
-## 🖼️ Capturas de Pantalla (Opcional)
-
-Agrega capturas de pantalla para que los usuarios puedan ver cómo luce tu proyecto.
+## 🖼️ Capturas de Pantalla
 
 ## 🧰 Instalación y Uso
 
