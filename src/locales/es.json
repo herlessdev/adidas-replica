@@ -1,0 +1,41 @@
+{
+  "navbar": {
+    "slider": [
+      "¡Reinventa tu look diario!",
+      "Revisa el horario de nuestras tiendas 📆",
+      "Hasta 50% off por final de temporada"
+    ],
+    "list-hidden": ["ayuda", "pedidos y devoluciones", "únete al club"],
+    "list": [
+      "calzado",
+      "mujer",
+      "hombre",
+      "niños",
+      "deporte",
+      "mundo adidas",
+      "hasta 50% off"
+    ],
+    "input": {
+      "name": "buscar"
+    }
+  },
+  "footer": {
+    "club": {
+      "description": "únete al club y recibe 300 puntos de bienvenida",
+      "button": {
+        "name": "regístrate gratis"
+      }
+    },
+    "finished": {
+      "opts": [
+        "Configuración de las cookies",
+        "Nuestro Datos",
+        "Términos y Condiciones",
+        "Política de Privacidad",
+        "Seleccionar País",
+        "Uso del Sitio"
+      ],
+      "copyright": "© 2024 adidas Perú SAC, RUC 20347100316. Av. 28 de Julio 1011, interior 1001, Miraflores, Código Postal Lima 18"
+    }
+  }
+}
