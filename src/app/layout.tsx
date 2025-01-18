@@ -23,7 +23,7 @@ export default async function RootLayout({
         <header>
           <Navbar dictionary={dictionary?.navbar} />
         </header>
-        {children}
+        <main>{children}</main>
         <Footer dictionary={dictionary?.footer} />
       </body>
     </html>

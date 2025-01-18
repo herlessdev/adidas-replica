@@ -25,13 +25,13 @@ const Navbar = ({ dictionary }: Props) => {
             </li>
           ))}
         </ul>
-        <div className="flex py-[11px] justify-between">
+        <div className="flex py-[9px] justify-between">
           <Image
             src="/logo.svg"
             alt="logo"
             width={60}
             height={38.39}
-            className="mt-[-30px]"
+            className="mt-[-26px]"
           />
           <div className="flex gap-4 items-center">
             <ul
