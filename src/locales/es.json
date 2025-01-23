@@ -21,7 +21,12 @@
   },
   "home": {
     "first-section": {
-      "description": "gana los predator firmados por corzo ⚽"
+      "offer": "gana los predator firmados por corzo ⚽",
+      "title": "PREDATOR",
+      "description": "Diseñados para marcar goles",
+      "button": {
+        "name": "comprar ahora"
+      }
     }
   },
   "footer": {
