@@ -27,6 +27,11 @@
       "button": {
         "name": "comprar ahora"
       }
+    },
+    "second-section": {
+      "url": {
+        "name": "comprar ahora"
+      }
     }
   },
   "footer": {

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import FirstSection from "./firstsection";
+import SecondSection from "./secondsection";
 
 export default function Home() {
   const [dictionary, setDictionary] = useState<any | null>(null);
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <section className="">
       <FirstSection dictionary={dictionary?.["first-section"]} />
+      <SecondSection dictionary={dictionary?.["second-section"]} />
     </section>
   );
 }
