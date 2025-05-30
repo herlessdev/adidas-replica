@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 
 interface Props {
   dictionary: any;
@@ -26,14 +27,12 @@ const Footer = ({ dictionary }: Props) => {
       <div className="bg-[#282c31] pt-8 pb-4 flex flex-col gap-8 text-[#c2c4ca] text-xs">
         <ul className="flex items-center justify-center">
           {dictionary?.finished?.opts?.map((opt, i, arr) => (
-            <>
-              <li key={i} className="px-5">
-                {opt}
-              </li>
+            <React.Fragment key={i}>
+              <li className="px-5">{opt}</li>
               {i !== arr.length - 1 && (
                 <div className="bg-[#c2c4ca] w-[1px] h-[20px]" />
               )}
-            </>
+            </React.Fragment>
           ))}
         </ul>
         <p className="text-center">{dictionary?.finished?.copyright}</p>

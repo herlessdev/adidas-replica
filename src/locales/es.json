@@ -13,10 +13,55 @@
       "niños",
       "deporte",
       "mundo adidas",
-      "hasta 50% off"
+      "outlet"
     ],
     "input": {
       "name": "buscar"
+    }
+  },
+  "home": {
+    "first-section": {
+      "offer": "gana los predator firmados por corzo ⚽",
+      "title": "PREDATOR",
+      "description": "Diseñados para marcar goles",
+      "button": {
+        "name": "comprar ahora"
+      }
+    },
+    "second-section": {
+      "url": {
+        "name": "comprar ahora"
+      }
+    },
+    "third-section": {
+      "selection": "Apoya a tu selección",
+      "team": "Encuentra a tu equipo"
+    }
+  },
+  "dynamic-slug": {
+    "colors": "colores",
+    "sizes": "tallas",
+    "car": {
+      "name": "Añadir al carrito"
+    }
+  },
+  "car": {
+    "name": "Tu carrito",
+    "total": "TOTAL",
+    "warning": "Los artículos en tu carrito no están reservados. Termina el proceso de compra ahora para hacerte con ellos.",
+    "send": {
+      "first": "Envíos Gratis 🚛💨 solo para miembros",
+      "second": "Si eres miembro de adiClub disfruta de envíos gratis en todas tus compras."
+    },
+    "product": {
+      "size": "tamaño"
+    },
+    "resume": {
+      "title": "Resumen del pedido",
+      "total": "total",
+      "igv": "IGV incluido",
+      "pay": "Ir a pagar",
+      "product": "producto"
     }
   },
   "footer": {

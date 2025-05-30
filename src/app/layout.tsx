@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import { CartProvider } from "@/context/carProvider";
 
 export const metadata: Metadata = {
   title: "Adidas replica",
@@ -20,11 +21,13 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <header>
-          <Navbar dictionary={dictionary?.navbar} />
-        </header>
-        {children}
-        <Footer dictionary={dictionary?.footer} />
+        <CartProvider>
+          <header>
+            <Navbar dictionary={dictionary?.navbar} />
+          </header>
+          {children}
+          <Footer dictionary={dictionary?.footer} />
+        </CartProvider>
       </body>
     </html>
   );

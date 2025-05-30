@@ -11,7 +11,6 @@ const ArrowDown = (props: React.SVGProps<SVGSVGElement>) => {
       viewBox="0 0 24 24"
       enableBackground="new 0 0 512 512"
       xmlSpace="preserve"
-      className=""
       {...props}
     >
       <g>
