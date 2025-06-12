@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Roboto_Serif } from "next/font/google";
 import cx from "@/libs/cx";
 import ArrowDown from "@/assets/icons/arrow-down";
 

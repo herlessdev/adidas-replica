@@ -13,7 +13,7 @@ const roboto = Roboto({
 });
 
 const CarClient = ({ dictionary }) => {
-  const { cart, addToCart, removeFromCart, clearCart } = useCart();
+  const { cart } = useCart();
   return (
     <section
       className={cx(

@@ -5,6 +5,7 @@ import SecondSection from "./secondSection";
 import ThirdSection from "./thirdSection";
 
 export default function Home() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [dictionary, setDictionary] = useState<any | null>(null);
   useEffect(() => {
     const fetchDictionary = async () => {
