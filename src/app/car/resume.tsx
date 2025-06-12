@@ -3,8 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 
-const Resume = ({ dictionary }) => {
-  const { cart, addToCart, removeFromCart, clearCart } = useCart();
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Resume = ({ dictionary }: any) => {
+  const { cart } = useCart();
   console.log(cart);
 
   const rawTotal = useMemo(() => {
