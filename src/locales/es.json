@@ -62,7 +62,22 @@
       "igv": "IGV incluido",
       "pay": "Ir a pagar",
       "product": "producto"
+    },
+    "empty": {
+      "title": "tu carrito está vacío",
+      "description": "Una vez que añadas algo a tu carrito, aparecerá aquí. ¿Listo para empezar?",
+      "button": {
+        "name": "Comenzar",
+        "path": "/"
+      }
     }
+  },
+  "checkout": {
+"title": "Pagar",
+"contact": {
+  "name": "contacto",
+  "email": "Correo electrónico"
+}
   },
   "footer": {
     "club": {

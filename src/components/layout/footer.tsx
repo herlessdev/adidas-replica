@@ -6,7 +6,7 @@ interface Props {
 }
 const Footer = ({ dictionary }: Props) => {
   return (
-    <footer>
+    <footer className="mt-auto">
       <div className="flex bg-[#ede734] gap-10  py-[37px] items-center justify-center uppercase font-bold">
         <p className="text-3xl">{dictionary?.club?.description}</p>
         <div className="relative">

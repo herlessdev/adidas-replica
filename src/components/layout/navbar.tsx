@@ -80,7 +80,11 @@ const Navbar = ({ dictionary }: Props) => {
                 />
               </li>
               <li className="relative">
-                {itemsTotal > 0 && <p className="bg-[#197fb6s] absolute left-[50%] bottom-[70%] rounded-full w-[22px] h-[22px] text-sm text-white font-bold flex items-center justify-center">{itemsTotal}</p>  }
+                {itemsTotal > 0 && (
+                  <p className="bg-[#197fb6] absolute left-[50%] bottom-[70%] rounded-full w-[22px] h-[22px] text-sm text-white font-bold flex items-center justify-center">
+                    {itemsTotal}
+                  </p>
+                )}
                 <Image
                   src="/shopcar.svg"
                   alt="shopcar-icon"
