@@ -3,7 +3,7 @@
 export default function CheckoutButton() {
 
   const handlePay = async () => {
-    const res = await fetch(`${process.env.APP_URL}/api/checkout/mercadopago`, {
+    const res = await fetch(`/api/checkout/mercadopago`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
