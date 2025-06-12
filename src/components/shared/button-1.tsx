@@ -2,7 +2,15 @@ import cx from "@/libs/cx";
 import Image from "next/image";
 import Link from "next/link";
 
-const Button1 = ({ elements, className }) => {
+interface Props {
+  elements: {
+    path: string;
+    name: string;
+  };
+  className: string;
+}
+
+const Button1 = ({ elements, className }: Props) => {
   return (
     <Link
       className={cx("relative", className)}

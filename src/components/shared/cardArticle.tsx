@@ -2,7 +2,16 @@ import Heart from "@/assets/icons/heart";
 import { slugify } from "@/utils/slugify";
 import Link from "next/link";
 
-const CardArticle = ({ article, url, marca }) => {
+interface Props {
+  article: {
+    name: string;
+    price: string;
+  };
+  url: string;
+  marca: string;
+}
+
+const CardArticle = ({ article, url, marca }: Props) => {
   return (
     <Link
       href={slugify(article.name)}
