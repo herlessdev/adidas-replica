@@ -1,6 +1,7 @@
 import Button1 from "@/components/shared/button-1";
 
-const EmptyCart = ({ dictionary }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const EmptyCart = ({ dictionary }: any) => {
   return (
     <div className="px-[52px] pt-[65px]">
       <h3 className="font-extrabold uppercase text-[34px] tracking-[0.2px] leading-[1]">

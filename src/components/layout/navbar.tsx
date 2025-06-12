@@ -6,10 +6,10 @@ import { Roboto } from "next/font/google";
 import cx from "@/libs/cx";
 import { useCart } from "@/context/carProvider";
 import { useMemo } from "react";
+import type { Navbar } from "@/interface/dictionary";
 
 interface Props {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  dictionary: any;
+  dictionary: Navbar;
 }
 
 const roboto = Roboto({
@@ -52,7 +52,7 @@ const Navbar = ({ dictionary }: Props) => {
                 "flex text-[13px] leading-[1] uppercase gap-5 items-center"
               )}
             >
-              {dictionary?.["list"].map((u:any, i:any, arr:any) => (
+              {dictionary?.["list"].map((u: any, i: any, arr: any) => (
                 <li
                   key={i}
                   className={cx(

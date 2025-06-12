@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-const ItemCar = ({ item, dictionary }) => {
+interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  item: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  dictionary: any;
+}
+const ItemCar = ({ item, dictionary }: Props) => {
   console.log(item);
   return (
     <div className="flex border-[.5px] border-[#767677]">
