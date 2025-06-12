@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Star from "@/assets/icons/star";
 import { useCart } from "@/context/carProvider";
@@ -6,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const Product = ({ dictionary, product }) => {
+const Product = ({ dictionary, product }: any) => {
   const [indexSelect, setIndexSelect] = useState(0);
   const [sizeIndexSelect, setSizeIndexSelect] = useState(0);
   const { addToCart } = useCart();
@@ -77,7 +78,7 @@ const Product = ({ dictionary, product }) => {
             {dictionary?.colors}
           </p>
           <div className="mt-[11px] flex gap-[5px]">
-            {product?.colors?.map((color, i) => (
+            {product?.colors?.map((color: any, i: number) => (
               <div
                 key={i}
                 className="group cursor-pointer duration-300 w-[70px] h-[68px] relative"
@@ -106,7 +107,7 @@ const Product = ({ dictionary, product }) => {
           </p>
 
           <div className="mt-[10px] flex gap-2 cursor-pointer">
-            {product?.sizes?.map((size, i) => (
+            {product?.sizes?.map((size: string, i: any) => (
               <div
                 key={i}
                 onClick={() => {
@@ -145,7 +146,11 @@ const Product = ({ dictionary, product }) => {
           onClick={() => {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { colors, ...rest } = product;
-            addToCart({ ...rest, color: product?.colors?.[indexSelect], size: product?.sizes?.[sizeIndexSelect] });
+            addToCart({
+              ...rest,
+              color: product?.colors?.[indexSelect],
+              size: product?.sizes?.[sizeIndexSelect],
+            });
           }}
         >
           <button className="group bg-black text-white uppercase flex gap-11 font-bold text-sm tracking-[2px] px-3.5 py-3.5 z-10 relative">
