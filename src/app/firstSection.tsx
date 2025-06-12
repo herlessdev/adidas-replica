@@ -9,7 +9,8 @@ const roboto = Roboto({
   weight: ["700", "400", "100"],
 });
 
-const FirstSection = ({ dictionary }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const FirstSection = ({ dictionary }: any) => {
   return (
     <section>
       <div
