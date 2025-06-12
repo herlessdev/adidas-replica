@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import React from "react";
 
 interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   dictionary: any;
 }
 const Footer = ({ dictionary }: Props) => {
@@ -26,7 +28,7 @@ const Footer = ({ dictionary }: Props) => {
 
       <div className="bg-[#282c31] pt-8 pb-4 flex flex-col gap-8 text-[#c2c4ca] text-xs">
         <ul className="flex items-center justify-center">
-          {dictionary?.finished?.opts?.map((opt, i, arr) => (
+          {dictionary?.finished?.opts?.map((opt: any, i: any, arr: any) => (
             <React.Fragment key={i}>
               <li className="px-5">{opt}</li>
               {i !== arr.length - 1 && (

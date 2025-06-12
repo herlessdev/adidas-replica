@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import cx from "@/libs/cx";
 import ArrowDown from "@/assets/icons/arrow-down";
 
 interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   dictionary: any;
 }
 
@@ -17,7 +19,7 @@ const SliderNav = ({ dictionary }: Props) => {
   }, [dictionary]);
   return (
     <div className="bg-black text-white w-full h-[40px] flex justify-center items-center relative">
-      {dictionary?.map((u, i) => (
+      {dictionary?.map((u: any, i: Key | null | undefined) => (
         <p
           className={cx(
             "tracking-[.75px] w-full flex gap-4 items-center justify-center uppercase font-bold text-[11px] top-1/2 left-1/2 absolute translate-x-[-50%] translate-y-[-50%] transition-opacity duration-[0.75s]",

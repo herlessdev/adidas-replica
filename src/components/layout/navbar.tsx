@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Image from "next/image";
 import SliderNav from "./slider-nav";
@@ -7,6 +8,7 @@ import { useCart } from "@/context/carProvider";
 import { useMemo } from "react";
 
 interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   dictionary: any;
 }
 
@@ -50,7 +52,7 @@ const Navbar = ({ dictionary }: Props) => {
                 "flex text-[13px] leading-[1] uppercase gap-5 items-center"
               )}
             >
-              {dictionary?.["list"].map((u, i, arr) => (
+              {dictionary?.["list"].map((u:any, i:any, arr:any) => (
                 <li
                   key={i}
                   className={cx(
