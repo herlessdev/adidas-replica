@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-const ThirdSection = ({ dictionary }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ThirdSection = ({ dictionary }: any) => {
   const selections = [
     {
       name: "peru",
