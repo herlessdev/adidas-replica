@@ -1,26 +1,41 @@
-import { mercadopago } from "@/libs/mercadopago";
+// app/api/webhook/route.ts
+import { NextRequest, NextResponse } from "next/server";
 import { Payment } from "mercadopago";
+import { mercadopago } from "@/libs/mercadopago";
 
-export async function POST(request: Request) {
+export async function POST(req: NextRequest) {
   try {
-    const body = await request.json();
-    const paymentId = body.data?.id;
+    const body = await req.json();
+    console.log("🔔 Webhook recibido:", JSON.stringify(body));
 
+    const paymentId = body.data?.id;
     if (!paymentId) {
-      return new Response("Missing ID", { status: 400 });
+      console.warn("❗ Webhook sin paymentId:", body);
+      return NextResponse.json({ ok: true });
     }
 
-    const payment = await new Payment(mercadopago).get({ id: paymentId });
+    let payment;
+    try {
+      payment = await new Payment(mercadopago).get({ id: paymentId });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+      console.error("❌ Error al obtener payment:", err.message);
+      return NextResponse.json({ ok: true });
+    }
+
+    console.log("📄 Pago consultado:", payment);
 
     if (payment.status === "approved") {
-      console.log("💰 Pago aprobado:", payment.id);
-      // Guardar en DB, actualizar estado, etc.
+      console.log("🏆 Pago aprobado:", payment.id);
+      // ... lógica del pedido aquí ...
+    } else {
+      console.log("ℹ️ Estado del pago:", payment.status);
     }
 
-    return new Response("OK", { status: 200 });
+    return NextResponse.json({ ok: true });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
-    console.error("❌ Error en webhook:", error);
-    return new Response("Internal Server Error", { status: 500 });
+  } catch (err: any) {
+    console.error("🛑 Error general en webhook:", err);
+    return NextResponse.json({ ok: true });
   }
 }
