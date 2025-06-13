@@ -17,12 +17,12 @@ export async function POST(req: NextRequest) {
         },
       ],
       back_urls: {
-        success: `${process.env.APP_URL}/success`,
-        failure: `${process.env.APP_URL}/failure`,
-        pending: `${process.env.APP_URL}/pending`,
+        success: `/success`,
+        failure: `/failure`,
+        pending: `/pending`,
       },
       auto_return: "approved",
-      notification_url: `${process.env.APP_URL}/api/webhook`,
+      notification_url: `/api/webhook`,
     },
   });
 
