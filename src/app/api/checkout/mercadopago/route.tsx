@@ -17,12 +17,12 @@ export async function POST(req: NextRequest) {
         },
       ],
       back_urls: {
-        success: `https://adidas-replica.onrender.com/success`,
-        failure: `https://adidas-replica.onrender.com/failure`,
-        pending: `https://adidas-replica.onrender.com/pending`,
+        success: `${process.env.APP_URL}/success`,
+        failure: `${process.env.APP_URL}/failure`,
+        pending: `${process.env.APP_URL}/pending`,
       },
       auto_return: "approved",
-      notification_url: `https://adidas-replica.onrender.com/api/webhook`,
+      notification_url: `${process.env.APP_URL}/api/webhook`,
     },
   });
 
