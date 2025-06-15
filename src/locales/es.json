@@ -73,11 +73,15 @@
     }
   },
   "checkout": {
-"title": "Pagar",
-"contact": {
-  "name": "contacto",
-  "email": "Correo electrónico"
-}
+    "pay": "Pagar",
+    "totalItems": {
+      "many": "productos",
+      "one": "producto"
+    },
+    "contact": {
+      "name": "contacto",
+      "email": "Correo electrónico"
+    }
   },
   "footer": {
     "club": {

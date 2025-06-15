@@ -16,8 +16,7 @@ const Resume = ({ dictionary }: any) => {
     );
   }, [cart]);
 
-  const igv = rawTotal * 0.18;
-  const totalConIgv = rawTotal + igv;
+  const igv = ((rawTotal / 118) * 18).toFixed(2);
 
   return (
     <div className="w-[364.58px] mr-[52px] flex flex-col">
@@ -33,7 +32,7 @@ const Resume = ({ dictionary }: any) => {
             {"(" + dictionary?.igv} S/{igv + ")"}
           </span>
         </p>
-        <span>S/ {totalConIgv.toFixed(2)}</span>
+        <span>S/ {rawTotal.toFixed(2)}</span>
       </div>
       <Link
         className="relative inline-flex mt-10"

@@ -6,21 +6,35 @@ import cx from "@/libs/cx";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Product = ({ dictionary, product }: any) => {
   const [indexSelect, setIndexSelect] = useState(0);
   const [sizeIndexSelect, setSizeIndexSelect] = useState(0);
   const { addToCart } = useCart();
+  const router = useRouter();
+
   console.log(product?.colors?.[indexSelect]);
   console.log(product);
 
   return (
     <section className="flex items-start">
       <div className="grid grid-cols-2 items-stretch gap-x-0.5 w-[calc(100%-320px)]">
-        <div className="relative w-full">
-          <div>
-            <a>Atrás</a>
-            <a>Inicio</a>
+        <div className="relative w-full h-auto">
+          <div className="absolute top-8 left-6 text-base z-10 gap-4 flex underline">
+            <button
+              className="flex gap-2"
+              onClick={() => router.back()}
+            >
+              <Image
+                src="turnback-left.svg"
+                alt="turn-left"
+                width={20}
+                height={20}
+              />
+              Atrás
+            </button>
+            <a href={"/"}>Inicio</a>
           </div>
           {product && (
             <Image
@@ -142,7 +156,7 @@ const Product = ({ dictionary, product }: any) => {
 
         <Link
           className="relative inline-flex mt-10"
-          href={"/car"}
+          href={"/cart"}
           onClick={() => {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { colors, ...rest } = product;

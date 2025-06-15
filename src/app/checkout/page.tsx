@@ -1,10 +1,8 @@
-import CheckoutButton from "./checkout-button";
+import ClientPage from "./client-page";
 
-export default function CheckoutPage() {
-  return (
-    <section>
-      <h1>Comprar</h1>
-      <CheckoutButton />
-    </section>
+export default async function CheckoutPage() {
+  const dictionary = await import(`@/locales/es.json`).then(
+    (module) => module.default?.["checkout"]
   );
+  return <ClientPage dictionary={dictionary} />
 }

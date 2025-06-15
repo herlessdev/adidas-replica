@@ -1,7 +1,11 @@
 "use client";
 
-export default function CheckoutButton() {
+import { useCart } from "@/context/carProvider";
 
+export default function CheckoutButton() {
+  const { cart } = useCart();
+  console.log(cart);
+  
   const handlePay = async () => {
     const res = await fetch(`/api/checkout/mercadopago`, {
       method: "POST",
@@ -29,7 +33,7 @@ export default function CheckoutButton() {
       onClick={handlePay}
       className="px-4 py-2 bg-blue-500 text-white rounded"
     >
-      Pagar con Mercado Pago
+      Pago
     </button>
   );
 }

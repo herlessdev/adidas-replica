@@ -7,6 +7,7 @@ import cx from "@/libs/cx";
 import { useCart } from "@/context/carProvider";
 import { useMemo } from "react";
 import type { Navbar } from "@/interface/dictionary";
+import Link from "next/link";
 
 interface Props {
   dictionary: Navbar;
@@ -81,18 +82,20 @@ const Navbar = ({ dictionary }: Props) => {
                   height={24}
                 />
               </li>
-              <li className="relative">
-                {itemsTotal > 0 && (
-                  <p className="bg-[#197fb6] absolute left-[50%] bottom-[70%] rounded-full w-[22px] h-[22px] text-sm text-white font-bold flex items-center justify-center">
-                    {itemsTotal}
-                  </p>
-                )}
-                <Image
-                  src="/shopcar.svg"
-                  alt="shopcar-icon"
-                  width={24}
-                  height={24}
-                />
+              <li>
+                <Link className="relative flex" href={"/car"}>
+                  {itemsTotal > 0 && (
+                    <p className="bg-[#197fb6] absolute left-[50%] bottom-[70%] rounded-full w-[22px] h-[22px] text-sm text-white font-bold flex items-center justify-center">
+                      {itemsTotal}
+                    </p>
+                  )}
+                  <Image
+                    src="/shopcar.svg"
+                    alt="shopcar-icon"
+                    width={24}
+                    height={24}
+                  />
+                </Link>
               </li>
             </ul>
           </div>

@@ -13,7 +13,7 @@ const roboto = Roboto({
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CarClient = ({ dictionary } :any) => {
+const CartClient = ({ dictionary }: any) => {
   const { cart } = useCart();
   return (
     <section
@@ -36,7 +36,8 @@ const CarClient = ({ dictionary } :any) => {
               <span className="font-bold">
                 S/{" "}
                 {cart?.reduce(
-                  (acumulador, item) => acumulador + Number(item?.price),
+                  (acumulador, item) =>
+                    acumulador + Number(item?.offert ?? item?.price),
                   0
                 )}
               </span>
@@ -64,4 +65,4 @@ const CarClient = ({ dictionary } :any) => {
   );
 };
 
-export default CarClient;
+export default CartClient;

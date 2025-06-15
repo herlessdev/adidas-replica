@@ -1,4 +1,4 @@
-import CarClient from "./car";
+import CartClient from "./cart";
 
 export default async function Car() {
   const dictionary = await import(`@/locales/es.json`).then(
@@ -6,6 +6,6 @@ export default async function Car() {
   );
 
   return (
-    <CarClient dictionary={dictionary} />
+    <CartClient dictionary={dictionary} />
   );
 }
