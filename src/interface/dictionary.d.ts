@@ -64,10 +64,20 @@ export interface Car {
 }
 
 export interface Checkout {
-  title: string;
+  pay: string;
+  totalItems: {
+    many: string;
+    one: string;
+  };
   contact: {
     name: string;
     email: string;
+  };
+  order: {
+    name: string;
+    edit: string;
+    total: string;
+    igv: string;
   };
 }
 

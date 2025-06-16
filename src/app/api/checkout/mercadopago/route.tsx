@@ -7,15 +7,7 @@ export async function POST(req: NextRequest) {
 
   const preference = await new Preference(mercadopago).create({
     body: {
-      items: [
-        {
-          id: "producto-123", // <--- Este es el campo requerido
-          title: body.title,
-          quantity: 1,
-          unit_price: body.price,
-          currency_id: "PEN",
-        },
-      ],
+      items: body?.items,
       back_urls: {
         success: `${process.env.APP_URL}/success`,
         failure: `${process.env.APP_URL}/failure`,

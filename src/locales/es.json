@@ -81,6 +81,12 @@
     "contact": {
       "name": "contacto",
       "email": "Correo electrónico"
+    },
+    "order": {
+     "name": "Tu pedido",
+     "edit": "editar",
+     "total": "total",
+     "igv": "IGV incluido" 
     }
   },
   "footer": {

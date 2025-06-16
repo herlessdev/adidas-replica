@@ -1,21 +1,23 @@
 "use client";
 
-import { useCart } from "@/context/carProvider";
+interface Props {
+  items: {
+    id: string;
+    title: string;
+    quantity: number;
+    unit_price: number;
+    currency_id: string;
+  }[];
+}
 
-export default function CheckoutButton() {
-  const { cart } = useCart();
-  console.log(cart);
-  
+export default function CheckoutButton({ items }: Props) {
   const handlePay = async () => {
     const res = await fetch(`/api/checkout/mercadopago`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        title: "Producto de prueba",
-        price: 100,
-      }),
+      body: JSON.stringify({ items }),
     });
 
     if (!res.ok) {
