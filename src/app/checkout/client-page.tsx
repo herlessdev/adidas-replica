@@ -29,7 +29,7 @@ export default function ClientPage({ dictionary }: Props) {
         id: item.id,
         title: item.name,
         quantity: item.quantity,
-        unit_price: item?.offert ?? item?.price,
+        unit_price: Number(item?.offert ?? item?.price),
         currency_id: "PEN",
       })),
     };
