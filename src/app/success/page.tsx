@@ -1,59 +1,33 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { useEffect, useState } from "react";
+
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-type PaymentData = {
-  id: string;
-  status: string;
-  transaction_amount: number;
-  payment_method_id: string;
-  payer: {
-    email: string;
-  };
-};
-
-const SuccessPage = () => {
+const SuccessContent = () => {
   const searchParams = useSearchParams();
-  const paymentId = searchParams.get("payment_id");
-
-  const [payment, setPayment] = useState<PaymentData | null>(null);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    const fetchPayment = async () => {
-      if (!paymentId) return;
-
-      try {
-        const res = await fetch(`/api/mercadopago/payment/${paymentId}`);
-        if (!res.ok) throw new Error("No se pudo obtener el resumen.");
-        const data = await res.json();
-        setPayment(data);
-      } catch (err) {
-        console.error(err);
-        setError("Hubo un error al obtener el resumen del pago.");
-      }
-    };
-
-    fetchPayment();
-  }, [paymentId]);
-
-  if (error) return <p>{error}</p>;
-  if (!payment) return <p>Cargando resumen del pago...</p>;
+  const itemsJSON = searchParams.get("items"); // suponiendo que enviaste los ítems por query
+  const items = itemsJSON ? JSON.parse(decodeURIComponent(itemsJSON)) : [];
 
   return (
-    <section className="p-4 max-w-xl mx-auto">
-      <h1 className="text-xl font-bold text-green-600 mb-4">
-        ✅ ¡Pago realizado con éxito!
-      </h1>
-      <ul className="space-y-2 text-gray-800">
-        <li><strong>ID de Pago:</strong> {payment.id}</li>
-        <li><strong>Estado:</strong> {payment.status}</li>
-        <li><strong>Monto:</strong> S/ {payment.transaction_amount.toFixed(2)}</li>
-        <li><strong>Método de pago:</strong> {payment.payment_method_id}</li>
-        <li><strong>Email del comprador:</strong> {payment.payer.email}</li>
+    <section className="p-8">
+      <h1 className="text-2xl font-bold mb-4">¡Gracias por tu compra!</h1>
+      <p className="mb-6">Resumen del pedido:</p>
+      <ul className="space-y-2">
+        {items.map((item: any, index: number) => (
+          <li key={index} className="border-b pb-2">
+            <strong>{item.title}</strong> — Cantidad: {item.quantity} — Precio: S/{item.unit_price}
+          </li>
+        ))}
       </ul>
     </section>
   );
 };
 
-export default SuccessPage;
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<p className="p-8">Cargando...</p>}>
+      <SuccessContent />
+    </Suspense>
+  );
+}
