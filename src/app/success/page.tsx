@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+export const dynamic = "force-dynamic";
 
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
 const SuccessContent = () => {
   const searchParams = useSearchParams();
-  const itemsJSON = searchParams.get("items"); // suponiendo que enviaste los ítems por query
+  const itemsJSON = searchParams.get("items"); // query param
   const items = itemsJSON ? JSON.parse(decodeURIComponent(itemsJSON)) : [];
 
   return (
