@@ -1,10 +1,4 @@
-const articles = [
-  {
-    name: "Chimpunes Predator League Firm/Multi-Terreno",
-    price: "1,099",
-    marca: "Performance",
-    url: "https://assets.adidas.com/images/w_600,f_auto,q_auto/c6a2cebb6b9f43098eabcc0ae18d7141_9366/Chimpunes_Predator_League_Firm-Multi-Terreno_Rojo_ID3745_HM1.jpg",
-  },
+const articles = [  
   {
     name: "Zapatilla Bubblecomfy (Bebé)",
     price: "129",

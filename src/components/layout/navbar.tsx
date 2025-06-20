@@ -29,7 +29,7 @@ const Navbar = ({ dictionary }: Props) => {
     <>
       <SliderNav dictionary={dictionary?.slider} />
       <nav className="flex flex-col pl-10 pr-[67px] justify-between border-gray border-b-[0.5px]">
-        <ul className="flex text-[11px] leading-[14px] tracking-[.38px] justify-end gap-5 py-2 text-black text-opacity-70">
+        <ul className="max-[950px]:hidden flex text-[11px] leading-[14px] tracking-[.38px] justify-end gap-5 py-2 text-black text-opacity-70">
           {dictionary?.["list-hidden"].map((u, i) => (
             <li key={i} className="hover:underline">
               {u}
@@ -43,14 +43,14 @@ const Navbar = ({ dictionary }: Props) => {
               alt="logo"
               width={60}
               height={38.39}
-              className="mt-[-30px]"
+              className="mt-[-30px] max-[950px]:mt-0"
             />
           </a>
           <div className="flex gap-4 items-center">
             <ul
               className={cx(
                 roboto.className,
-                "flex text-[13px] leading-[1] uppercase gap-5 items-center"
+                "flex text-[13px] leading-[1] uppercase gap-5 items-center max-[950px]:hidden"
               )}
             >
               {dictionary?.["list"].map((u: any, i: any, arr: any) => (
@@ -59,7 +59,8 @@ const Navbar = ({ dictionary }: Props) => {
                   className={cx(
                     "tracking-[2px]",
                     i < 4 && "font-bold",
-                    i === arr.length - 1 && "text-[#e3383f] font-bold"
+                    i === arr.length - 1 &&
+                      "text-[#e3383f] font-bold hidden xl:flex"
                   )}
                 >
                   {u}
@@ -68,7 +69,7 @@ const Navbar = ({ dictionary }: Props) => {
             </ul>
             <input
               placeholder={dictionary?.input?.name}
-              className="bg-[#eceff1] capitalize px-3 py-[8px] w-[198px] text-[13.4px] leading-[16px]"
+              className="bg-[#eceff1] capitalize px-3 py-[8px] w-[120px] xl:w-[198px] text-[13.4px] leading-[16px] max-[950px]:hidden"
             />
             <ul className="flex gap-6">
               <li>
@@ -83,7 +84,7 @@ const Navbar = ({ dictionary }: Props) => {
                 />
               </li>
               <li>
-                <Link className="relative flex" href={"/car"}>
+                <Link className="relative flex" href={"/cart"}>
                   {itemsTotal > 0 && (
                     <p className="bg-[#197fb6] absolute left-[50%] bottom-[70%] rounded-full w-[22px] h-[22px] text-sm text-white font-bold flex items-center justify-center">
                       {itemsTotal}
