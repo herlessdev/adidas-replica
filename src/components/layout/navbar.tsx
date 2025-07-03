@@ -42,7 +42,7 @@ const Navbar = ({ dictionary }: Props) => {
   return (
     <>
       <SliderNav dictionary={dictionary?.slider} />
-      <nav className="flex flex-col pl-10 pr-[67px] justify-between border-gray border-b-[0.5px]">
+      <nav className="flex flex-col sm:pl-10 pl-4 pr-4 sm:pr-[67px] justify-between border-gray border-b-[0.5px]">
         <ul className="max-[950px]:hidden flex text-[11px] leading-[14px] tracking-[.38px] justify-end gap-5 py-2 text-black text-opacity-70">
           {dictionary?.["list-hidden"].map((u, i) => (
             <li key={i} className="hover:underline">
@@ -59,8 +59,8 @@ const Navbar = ({ dictionary }: Props) => {
               src="/logo.svg"
               alt="logo"
               width={60}
-              height={38.39}
-              className="mt-[-30px] max-[950px]:mt-0"
+              height={62}
+              className="mt-[-30px] max-[950px]:mt-0 max-[950px]:w-[50px] w-[60px]"
             />
           </a>
           <div className="flex gap-4 items-center">
