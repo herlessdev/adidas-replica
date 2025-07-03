@@ -9,7 +9,7 @@ interface Props {
 const Footer = ({ dictionary }: Props) => {
   return (
     <footer className="mt-auto">
-      <div className="flex bg-[#ede734] gap-10  py-[37px] items-center justify-center uppercase font-bold">
+      <div className="flex lg:flex-row flex-col lg:gap-0 gap-8 bg-[#ede734] text-center py-[37px] items-center justify-between uppercase font-bold px-16">
         <p className="text-3xl">{dictionary?.club?.description}</p>
         <div className="relative">
           <button className="group bg-black text-white uppercase flex gap-4 text-sm tracking-[2px] px-3.5 py-3.5 z-10 relative">
@@ -27,12 +27,12 @@ const Footer = ({ dictionary }: Props) => {
       </div>
 
       <div className="bg-[#282c31] pt-8 pb-4 flex flex-col gap-8 text-[#c2c4ca] text-xs">
-        <ul className="flex items-center justify-center">
+        <ul className="grid grid-cols-2 px-16 lg:px-0 lg:flex flex-wrap gap-4 items-center justify-center">
           {dictionary?.finished?.opts?.map((opt: any, i: any, arr: any) => (
             <React.Fragment key={i}>
               <li className="px-5">{opt}</li>
               {i !== arr.length - 1 && (
-                <div className="bg-[#c2c4ca] w-[1px] h-[20px]" />
+                <div className="lg:block hidden bg-[#c2c4ca] w-[1px] h-[20px]" />
               )}
             </React.Fragment>
           ))}

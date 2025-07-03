@@ -22,8 +22,22 @@ const roboto = Roboto({
 const Navbar = ({ dictionary }: Props) => {
   const { cart } = useCart();
 
-  const itemsTotal = useMemo(() => {
-    return cart.reduce((total, item) => total + item.quantity, 0);
+  const resumen = useMemo(() => {
+    const totalItems = cart?.reduce((acc, item) => acc + item.quantity, 0);
+    const total = cart?.reduce(
+      (acc, item) => acc + item.quantity * (item.offert ?? item.price),
+      0
+    );
+
+    const igv = (total / 118) * 18;
+    const subtotal = total - igv;
+
+    return {
+      totalItems,
+      subtotal: subtotal.toFixed(2),
+      igv: igv.toFixed(2),
+      total: total.toFixed(2),
+    };
   }, [cart]);
   return (
     <>
@@ -85,9 +99,9 @@ const Navbar = ({ dictionary }: Props) => {
               </li>
               <li>
                 <Link className="relative flex" href={"/cart"}>
-                  {itemsTotal > 0 && (
+                  {resumen?.totalItems > 0 && (
                     <p className="bg-[#197fb6] absolute left-[50%] bottom-[70%] rounded-full w-[22px] h-[22px] text-sm text-white font-bold flex items-center justify-center">
-                      {itemsTotal}
+                      {resumen?.totalItems}
                     </p>
                   )}
                   <Image

@@ -76,7 +76,7 @@ const ThirdSection = ({ dictionary }: any) => {
         <p className="text-center text-sm tracking-wider">
           {dictionary?.selection}
         </p>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap justify-center">
           {selections?.map((selection, i) => (
             <Image
               key={i}
@@ -93,7 +93,7 @@ const ThirdSection = ({ dictionary }: any) => {
       </div>
       <div className="flex flex-col items-center justify-center gap-3">
         <p className="text-center text-sm tracking-wider">{dictionary?.team}</p>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap justify-center">
           {teams?.map((team, i) => (
             <Image
               key={i}
