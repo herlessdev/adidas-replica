@@ -51,6 +51,9 @@ const Navbar = ({ dictionary }: Props) => {
           ))}
         </ul>
         <div className="flex pt-[11px] pb-[7px] justify-between">
+          <div className="hidden items-center justify-center max-[950px]:flex">
+            <Image src="/menu.svg" width={24} height={24} alt="menu" />
+          </div>
           <a className="flex" href={"/"}>
             <Image
               src="/logo.svg"
