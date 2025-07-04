@@ -22,10 +22,11 @@ const FirstSection = ({ dictionary }: any) => {
         <p className="text-center w-full">{dictionary?.offer}</p>
         <ArrowRight className="w-5 h-5 text-[#767879] ml-auto" />
       </div>
-      <div className="w-full aspect-[1920/736] xl:aspect-auto xl:h-[599px] relative">
+      <div className="w-full min-[930px]:h-auto relative overflow-hidden">
         <Image
-          className="z-[-1] object-cover xl:object-contain"
-          fill
+          className="z-[-1] flex max-w-[300%] w-[300%] max-h-[100vh] object-cover min-[930px]:max-w-[100%] min-[930px]:object-cover xl:object-contain"
+          width={1920}
+          height={853}
           alt="first-front-page"
           src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto:best,fl_lossy/if_w_gt_1920,w_1920/pe_ss25_football_predator_pure_victory_mp1_banner_male_d_f118bbff68.jpg"
         />
